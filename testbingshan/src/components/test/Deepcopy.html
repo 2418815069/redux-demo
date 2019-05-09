@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //深拷贝与浅拷贝
+    let obj = {
+      a: 123,
+      b: 33,
+      c: {
+        a: 1221,
+        b: 88
+      }
+    };
+    let arr = [1, 2, 3, {
+      a: 399
+    }];
+    let copy = {};
+    copy.a = obj.a;
+    copy.b = obj.b;
+    copy.c = obj.c;
+    copy.c.a = 434;
+    copy.b = 66;
+    console.log(copy);
+    console.log(obj);
+
+    function clone(value) {
+      if (typeof value === 'object') {
+        let isArray = {}.toString.call(value) === '[object Array]';
+        let rs = isArray ? [] : {};
+        for (let i in value) {
+          rs[i] = value[i];
+        }
+        return rs;
+      } else {
+        return value
+      }
+    }
+    let copy = clone(arr)
+  </script>
+</body>
+
+</html>
