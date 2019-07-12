@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<script>
+  // location该对象封装了浏览器的地址栏信息
+  window.onload = function () {
+    let btn = document.getElementById("btn");
+    btn.onclick = function () {
+      // location = 'https://www.bilibili.com/video/av34087791/?p=126';
+      console.log('location', location);
+      console.log('navigator', navigator);
+      console.log('history', history);
+    }
+  }
+</script>
+
+<body>
+  <button id="btn">btn</button>
+
+</body>
+
+</html>

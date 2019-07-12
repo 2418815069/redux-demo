@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 时间戳
+    let start = Date.now();
+    // for (let i = 0; i < 1000; i++) {
+    //   console.log(i);
+    // }
+    let str = '434';
+    let result = str.concat('你好', '再见');
+    console.log(result);
+    let obj = {};
+    if (obj.length) {
+      console.log(obj);
+    }
+    console.log(Math.sqrt(8));
+    console.log(Math.ceil(8.2));
+    let end = Date.now();
+    console.log('执行了，', +(end - start) + '毫秒');
+    for (let i = 1; i <= 3; i++) {
+      setTimeout(function () {
+        console.log('i', i);
+      }, 0);
+    };
+    let arrData = [1, 4, 2, 4, 4, 6, 5, 9, 8, 8, 8, 7];
+    console.log(arrData);
+    arrData.forEach((item, index, arr) => {
+      for (let i = index + 1; i < arr.length; i++) {
+        if (item == arr[i]) {
+          arr.splice(i, 1);
+          // 当删除了当前j所在的元素以后， 后面的元素自动补位， 此时将不会在比较这个元素， 我需要再比较一次j所在位置的元素
+          i--;
+        }
+      }
+    });
+    console.log(arrData);
+  </script>
+</body>
+
+</html>

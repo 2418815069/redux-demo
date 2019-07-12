@@ -14,8 +14,8 @@ class RouterIndex extends React.Component{
                 <Redirect to="/index" />
             )} />
             <Route path="/index" component={Index} />
-            <Route path="/about" component={About} />
             <Route path="/book" component={Book} />
+            <Route path="/about" component={About} />
             <Route path="/user" component={User} />
             <Route path="/details" component={Details} />
         </Switch>
