@@ -17,3 +17,29 @@ ul li {
   display: flex;
   align-items: center;
 }
+
+.lineCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .navMenu {
+    background-color: rgb(255, 127, 227);
+  }
+
+  .main {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navMenu {
+    background-color: rgb(153, 255, 127);
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+  }
+}

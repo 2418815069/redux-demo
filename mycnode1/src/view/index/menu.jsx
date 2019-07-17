@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, Row, Col } from "antd";
-import RouterList from "../../router/router";
+import styled from "styled-components";
+import { Col } from "antd";
 
 const suMenu = [
   { name: "全部", path: "/index/all" },
@@ -17,20 +17,15 @@ class IndexMenu extends React.Component {
   };
   render() {
     return (
-      <Row>
-        <Col sm={24} md={4}>
-          {suMenu.map(item => {
-            return (
-              <NavLink key={item.name} to={item.path} activeClassName="active">
-                {item.name}
-              </NavLink>
-            );
-          })}
-        </Col>
-        <Col md={20}>
-          <RouterList />
-        </Col>
-      </Row>
+      <Col sm={24} md={4} className="navMenu">
+        {suMenu.map(item => {
+          return (
+            <NavLink key={item.name} to={item.path} activeClassName="active">
+              {item.name}
+            </NavLink>
+          );
+        })}
+      </Col>
     );
   }
 }
