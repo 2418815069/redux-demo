@@ -234,6 +234,38 @@
     3). 作用?
        a. 后台路由: 当服务器接收到请求时, 根据请求的path找到对应的路由, 由路由的回调函数来处理请求, 返回响应数据
        b. 前台路由: 当请求某个路由地址时, 根据请求的path找到对应的路由, 显示路由对应的组件界面,当请求的是路由path时, 浏览器端前没有发送http请求, 但界面会更新显示对应的组件 
+## react-router的使用
+    1. 相关语法
+        1). 组件
+            <HashRouter> / <BrowserRouter>
+            <Route>
+            <Redirect>
+            <NavLink> / <Link>
+            <Switch>
+        2). 对象或函数
+            props.history对象
+            props.match对象
+            props.location对象
+            withRouter函数
+            
+    2. 基本使用
+        1). 定义路由组件
+        2). 映射成路由
+        3). 通过路由链接或编程式路由导航跳转路由
+    
+    3. 嵌套路由
+        1). 在某个路由组件内部映射子路由
+        2). 2级路由必然是某个1级路由的子路由
+    
+    4. 向路由组件传递数据
+        1). 映射路由: <Route path="/home/message/:id"/>
+        2). 路由链接传递数据: <Link to="/home/message/3">
+        5). 路由组件读取数据: this.props.match.params.id
+    
+    5. 编程式路由导航(跳转)
+        1). history.push(path)
+        2). history.replace(path)
+        3). history.goBack()
        
 ## 6. async与await
     1). 作用?
