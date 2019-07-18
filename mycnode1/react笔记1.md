@@ -176,6 +176,8 @@
     3). 发请求的时机/位置:
        a. 初始化请求: componentDidMount()
        b. 用户操作后请求: 事件回调函数或相关位置 
+    axios: 包装XMLHttpRequest对象, promise风格, 支持浏览端/node服务器端
+	fetch: 浏览器内置语法, promise风格, 老浏览器不支持, 可以引入fetch.js兼容包
 
 ## 2. 比较react中组件间3种通信方式
     1). 方式一: 通过props传递
@@ -214,6 +216,14 @@
     2). 触发事件与发布消息
         标识名称: 事件名---消息名
         数据: 自动传递给回调函数
+    使用方式: 使用消息订阅(subscribe)-发布(publish)机制: 自定义事件机制
+	工具库: PubSubJS
+	下载: npm install pubsub-js --save
+	使用: 
+	  import PubSub from 'pubsub-js' //引入
+	  PubSub.subscribe('delete', function(msg, data){ }); //订阅
+	  PubSub.publish('delete', data) //发布消息
+	优点: 可以支持任意关系组件之间的通信
         
 ## 5. 说说你对路由的理解
     1). 路由是什么?
@@ -222,8 +232,8 @@
        a. 后台路由: path/method---callback
        b. 前台路由: path---component
     3). 作用?
-       a. 后台路由: 当服务器接收到请求时, 根据请求的path找到对应的路由, 由路由的回调函数来处理请求, 返回响应
-       b. 前台路由: 当请求某个路由地址时, 根据请求的path找到对应的路由, 显示路由对应的组件界面
+       a. 后台路由: 当服务器接收到请求时, 根据请求的path找到对应的路由, 由路由的回调函数来处理请求, 返回响应数据
+       b. 前台路由: 当请求某个路由地址时, 根据请求的path找到对应的路由, 显示路由对应的组件界面,当请求的是路由path时, 浏览器端前没有发送http请求, 但界面会更新显示对应的组件 
        
 ## 6. async与await
     1). 作用?
