@@ -5,6 +5,7 @@ import {Provider} from "react-redux";
 import styled from 'styled-components';
 import RouterIndex from './router/index';
 import MinHeader from './view/min-header';
+import MinFooter from './view/min-footer';
 import reducers from './reducers/index';
 
 const store = createStore(reducers);
@@ -13,20 +14,18 @@ const Constainer = styled.div`
     /* background-color: rgba(0, 0, 0, 0.85);
     display: flex;
     justify-content: center; */
-    .main{
-      padding: 0 50px;
-    }
 `;
 const App = ()=> {
   return (
     <Provider store={store}>
       <BrowserRouter>
-    <Constainer>
-    <MinHeader>
-    </MinHeader>
-      <div className="main">
-        <RouterIndex />
-      </div>
+      <Constainer>
+      <MinHeader>
+      </MinHeader>
+        <div className="main">
+          <RouterIndex/>
+        </div>
+      <MinFooter></MinFooter>
       </Constainer>
     </BrowserRouter>
     </Provider>

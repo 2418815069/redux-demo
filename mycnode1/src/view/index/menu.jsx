@@ -17,7 +17,7 @@ class IndexMenu extends React.Component {
   };
   render() {
     return (
-      <Col sm={24} md={4} className="navMenu">
+      <Col sm={24} md={6} className="navMenu">
         {suMenu.map(item => {
           return (
             <NavLink key={item.name} to={item.path} activeClassName="active">
